@@ -910,7 +910,8 @@
                         <h3 class="price-text">
                             <span id="plan_name" style="font-size: 30px;">Sapling</span><br>
                             <br><span class="tm-x---m" id="total_price">INR</span></h3>
-                            <span id="">User/Months</span><br>
+                            <p class="text-center"><span id="userRangeValue"></span> Users / Months</p><br>
+                            <!-- <span id="">User/Months</span><br> -->
                             <span style="color:#16325C;"><strong>(10% discount applied)</strong></span>
                     </div>
                     
@@ -1699,6 +1700,16 @@
       user__output.innerHTML = this.value;
     };
 
+    //displays uservalue
+    var user_slider_value = document.getElementById("userCount");
+    var user_output_value = document.getElementById("userRangeValue");
+    user_output_value.innerHTML = user_slider_value.value;
+
+    user_slider_value.oninput = function() {
+      user_output_value.innerHTML = this.value;
+    };
+    //
+
     var seedAmount = document.getElementById("seed_price");
     var saplingAmount = document.getElementById("sapling_price");
     var treeAmount = document.getElementById("tree_price");
@@ -1724,6 +1735,7 @@
 
 	function getcalcualteddata(event){
 	    var slider_step = 1;
+        var slider_step_value = 0;
         var smsCost = 0;
         var mailCost = 0;
         var voiceCost = 0;
@@ -1785,6 +1797,18 @@
             document.getElementById("userCount").stepDown(slider_step);
             user__output.innerHTML = user__slider.value;
          }
+
+         //
+         var target_user_value = event.target;
+        if (target_user_value.id == 'user_slider_plus') {
+            document.getElementById("userCount").stepUp(slider_step_value);
+            user_output_value.innerHTML = user_slider_value.value;
+         }
+        else if (target_user_value.id == 'user_slider_minus') {
+            document.getElementById("userCount").stepDown(slider_step_value);
+            user_output_value.innerHTML = user_slider_value.value;
+         }
+         //
 		
 
         if (Number(sms__output.innerHTML) <= 100000) {
