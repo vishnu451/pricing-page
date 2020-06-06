@@ -912,7 +912,7 @@
                             <br><span class="tm-x---m" id="total_price">INR</span></h3>
                             <p class="text-center"><span id="userRangeValue"></span> Users / <span id="userMonthValue"></span> Months</p>
                             <!-- <span id="">User/Months</span><br> -->
-                            <span style="color:#16325C;"><strong>(with 10% discount)</strong></span>
+                            <span style="color:#16325C;" id="discountTag"><strong>(with 10% discount)</strong></span>
                     </div>
                     
                      <div class="bm-x---xxl text-center">
@@ -1889,8 +1889,18 @@
         totPrice = smsCost + mailCost + voiceCost + (planCost * userCost * planMonth);
         var discountPrice = totPrice - (totPrice * 10/100);
         var afterDiscount = Math.round(discountPrice);
-        totalPrice.innerHTML = "INR " + afterDiscount+ "/-";
+        var discountPriceAnnual = totPrice - (totPrice * 15/100);//15%discount for 12months
+        var afterAnnualDiscount = Math.round(discountPriceAnnual);//
+        if(planMonth == "6"){
+            totalPrice.innerHTML = "INR " + afterDiscount+ "/-";
+            document.getElementById("discountTag").innerHTML="(with 10% discount)";
+        }
+        else if(planMonth == "12"){
+            totalPrice.innerHTML = "INR " + afterAnnualDiscount+ "/-";
+            document.getElementById("discountTag").innerHTML="(with 15% discount)";
 
+        }
+       
 
         // totalMonth.innerHTML = months;
   //      packPrice.innerHTML = planCost;
