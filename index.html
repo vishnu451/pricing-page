@@ -1694,20 +1694,23 @@
 
     var user__slider = document.getElementById("userCount");
     var user__output = document.getElementById("userRange");
+    var user_output_value = document.getElementById("userRangeValue");//
     user__output.innerHTML = user__slider.value;
+    user_output_value.innerHTML = user__slider.value;//
 
     user__slider.oninput = function() {
       user__output.innerHTML = this.value;
+      user_output_value.innerHTML = this.value;//
     };
 
     //displays uservalue
-    var user_slider_value = document.getElementById("userCount");
-    var user_output_value = document.getElementById("userRangeValue");
-    user_output_value.innerHTML = user_slider_value.value;
+    //var user__slider = document.getElementById("userCount");
+    // var user_output_value = document.getElementById("userRangeValue");
+    // user_output_value.innerHTML = user__slider.value;
 
-    user_slider_value.oninput = function() {
-      user_output_value.innerHTML = this.value;
-    };
+    // user__slider.oninput = function() {
+    //   user_output_value.innerHTML = this.value;
+    // };
     //
 
     var seedAmount = document.getElementById("seed_price");
@@ -1792,22 +1795,24 @@
         if (target_user.id == 'user_slider_plus') {
             document.getElementById("userCount").stepUp(slider_step);
             user__output.innerHTML = user__slider.value;
+            user_output_value.innerHTML = user__slider.value;//
          }
         else if (target_user.id == 'user_slider_minus') {
             document.getElementById("userCount").stepDown(slider_step);
             user__output.innerHTML = user__slider.value;
+            user_output_value.innerHTML = user__slider.value;//
          }
 
          //
-         var target_user_value = event.target;
-        if (target_user_value.id == 'user_slider_plus') {
-            document.getElementById("userCount").stepUp(slider_step_value);
-            user_output_value.innerHTML = user_slider_value.value;
-         }
-        else if (target_user_value.id == 'user_slider_minus') {
-            document.getElementById("userCount").stepDown(slider_step_value);
-            user_output_value.innerHTML = user_slider_value.value;
-         }
+        //  var target_user_value = event.target;
+        // if (target_user_value.id == 'user_slider_plus') {
+        //     document.getElementById("userCount").stepUp(slider_step_value);
+        //     user_output_value.innerHTML = user_slider_value.value;
+        //  }
+        // else if (target_user_value.id == 'user_slider_minus') {
+        //     document.getElementById("userCount").stepDown(slider_step_value);
+        //     user_output_value.innerHTML = user_slider_value.value;
+        //  }
          //
 		
 
