@@ -1893,12 +1893,13 @@
         var afterAnnualDiscount = Math.round(discountPriceAnnual);//
         if(planMonth == "6"){
             totalPrice.innerHTML = "INR " + afterDiscount+ "/-";
+            document.getElementById("discountTag").style.fontWeight="900";
             document.getElementById("discountTag").innerHTML="(with 10% discount)";
         }
         else if(planMonth == "12"){
             totalPrice.innerHTML = "INR " + afterAnnualDiscount+ "/-";
+            document.getElementById("discountTag").style.fontWeight="900";
             document.getElementById("discountTag").innerHTML="(with 15% discount)";
-
         }
        
 
