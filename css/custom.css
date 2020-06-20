@@ -1771,6 +1771,9 @@ ul.social-network li {
   padding: 5px;
   font-size: 14px;
 }
+p.highlight-para{
+  font-size: 13px;
+}
 i.fa.fa-check {
   color: #007e33;
 }
@@ -1802,7 +1805,7 @@ i.fa.fa-check {
   margin-top: 15px;
 }
 .panel-pricing {
-  height: 1300px;
+  height: 2185px;
   margin-bottom: 0;
   background: transparent;
 }
@@ -2534,6 +2537,30 @@ input[type="range"] {
 .pricing_accordion li > span.active {
   /*background: url(images/collapse-arrow.png) no-repeat 99.5% 6px #000;*/
   background-size: 20px;
+}
+@media only screen and (min-width:1200px){
+  h3.sales-h3-seed{
+    margin-top: 50px;
+  }
+  h3.sales-h3-sapling{
+    margin-top: 30px;
+  }
+  h3.support-h3-tree{
+    margin-top: 70px;
+  }
+  h3.support-h3-seed{
+    margin-top: 203px;
+  }
+  h3.success-h3-seed{
+    margin-top: 112px;
+  }
+  h3.success-h3-tree{
+    margin-top: 92px;
+  }
+  h3.dashboard-h3-seed{
+    margin-top: 101px;
+  }
+
 }
 .testimonial-italic-font {
   font-size: 20px;
